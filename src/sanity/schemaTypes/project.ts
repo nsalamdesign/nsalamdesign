@@ -66,6 +66,13 @@ defineField({
     }),
 
     defineField({
+     name: "caseStudy",
+     title: "Case Study",
+     type: "array",
+     of: [{ type: "block" }],
+   }),
+
+    defineField({
       name: "gallery",
       title: "Gallery",
       type: "array",

@@ -36,6 +36,7 @@ export const projectQuery = `
   year,
   services,
   mainImage,
+  caseStudy,
   gallery
 }
 `;
