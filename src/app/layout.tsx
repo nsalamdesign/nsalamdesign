@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import PageWrapper from "@/components/animations/PageWrapper";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nsalamdesign.com"),
+  metadataBase: new URL("https://nsalamdesign.vercel.app/"),
 
   title: {
     default: "N.Salam Design",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "N.Salam Design",
     description:
       "Premium logo design and branding studio helping businesses build memorable identities through strategic design.",
-    url: "https://nsalamdesign.com",
+    url: "https://nsalamdesign.vercel.app/",
     siteName: "N.Salam Design",
     locale: "en_US",
     type: "website",
