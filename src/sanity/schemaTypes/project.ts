@@ -66,11 +66,41 @@ defineField({
     }),
 
     defineField({
-     name: "caseStudy",
-     title: "Case Study",
-     type: "array",
-     of: [{ type: "block" }],
-   }),
+  name: "caseStudy",
+  title: "Case Study",
+  type: "array",
+  of: [
+    {
+      type: "block",
+      styles: [
+        { title: "Normal", value: "normal" },
+        { title: "H1", value: "h1" },
+        { title: "H2", value: "h2" },
+        { title: "H3", value: "h3" },
+        { title: "H4", value: "h4" },
+        { title: "Quote", value: "blockquote" },
+      ],
+      lists: [
+        { title: "Bullet List", value: "bullet" },
+        { title: "Numbered List", value: "number" },
+      ],
+      marks: {
+        decorators: [
+          { title: "Bold", value: "strong" },
+          { title: "Italic", value: "em" },
+          { title: "Underline", value: "underline" },
+        ],
+        annotations: [],
+      },
+    },
+    {
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+  ],
+}),
 
     defineField({
       name: "gallery",

@@ -20,6 +20,14 @@ export const categoryType = defineType({
         source: "title",
       },
     }),
+    
+    defineField({
+     name: "order",
+     title: "Display Order",
+     type: "number",
+     initialValue: 0,
+    validation: (Rule) => Rule.required().min(0),
+     }),
 
     defineField({
       name: "description",

@@ -8,6 +8,8 @@ import ScaleIn from "@/components/animations/ScaleIn";
 import CardAnimation from "@/components/animations/CardAnimation";
 import StaggerContainer from "@/components/animations/StaggerContainer";
 
+import { PortableText } from "@portabletext/react";
+
 type Project = {
   title: string;
   description: string;
@@ -15,7 +17,7 @@ type Project = {
   year?: string;
   services?: string[];
   mainImage?: any;
-  caseStudy?: any[];
+  caseStudy?: any;
   gallery?: any[];
 };
 
@@ -40,6 +42,44 @@ export default async function ProjectPage({
       </main>
     );
   }
+
+  // Portable Text custom rendering (this is the key upgrade)
+  const portableComponents = {
+    block: {
+      h1: ({ children }: any) => (
+        <h1 className="text-4xl md:text-5xl font-semibold mt-10 mb-6">
+          {children}
+        </h1>
+      ),
+      h2: ({ children }: any) => (
+        <h2 className="text-3xl md:text-4xl font-semibold mt-8 mb-4">
+          {children}
+        </h2>
+      ),
+      h3: ({ children }: any) => (
+        <h3 className="text-2xl md:text-3xl font-semibold mt-6 mb-3">
+          {children}
+        </h3>
+      ),
+      normal: ({ children }: any) => (
+        <p className="text-white/70 leading-relaxed text-lg mb-4">
+          {children}
+        </p>
+      ),
+    },
+
+    types: {
+      image: ({ value }: any) => (
+        <div className="my-10">
+          <img
+            src={urlFor(value).url()}
+            alt="case study image"
+            className="w-full rounded-2xl border border-white/10"
+          />
+        </div>
+      ),
+    },
+  };
 
   return (
     <main className="bg-black text-white min-h-screen">
@@ -111,7 +151,7 @@ export default async function ProjectPage({
             </FadeIn>
           ) : null}
 
-          {/* CASE STUDY */}
+          {/* CASE STUDY (UPGRADED) */}
           {project.caseStudy?.length ? (
             <FadeIn>
               <div className="mt-20">
@@ -119,15 +159,10 @@ export default async function ProjectPage({
                   Case Study
                 </h2>
 
-                <div className="space-y-6 text-white/70 leading-relaxed text-lg">
-                  {project.caseStudy.map((block: any) => (
-                    <p key={block._key}>
-                      {block.children
-                        ?.map((child: any) => child.text)
-                        .join("")}
-                    </p>
-                  ))}
-                </div>
+                <PortableText
+                  value={project.caseStudy}
+                  components={portableComponents}
+                />
               </div>
             </FadeIn>
           ) : null}
