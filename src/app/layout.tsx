@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import PageWrapper from "@/components/animations/PageWrapper";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nsalamdesign.vercel.app/"),
+  metadataBase: new URL("https://nsalamdesign.vercel.app"),
 
   title: {
     default: "N.Salam Design",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "N.Salam Design",
     description:
       "Premium logo design and branding studio helping businesses build memorable identities through strategic design.",
-    url: "https://nsalamdesign.vercel.app/",
+    url: "https://nsalamdesign.vercel.app",
     siteName: "N.Salam Design",
     locale: "en_US",
     type: "website",
@@ -59,6 +59,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+
+  verification: {
+    google: "LMTRA9Gqy3s77SmxXK4PUIwuzFF3JEBUr1xSS-P-p8c",
   },
 };
 
