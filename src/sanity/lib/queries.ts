@@ -1,10 +1,11 @@
 export const categoriesQuery = `
-*[_type == "category"] | order(title asc){
+*[_type == "category"] | order(order asc){
   _id,
   title,
   "slug": slug.current,
   description,
-  coverImage
+  coverImage,
+  order
 }
 `;
 
