@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
+import DisableRightClick from "@/components/DisableRightClick";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -74,6 +76,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <DisableRightClick />
+        
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-S509X0HKSK"
           strategy="afterInteractive"

@@ -132,6 +132,8 @@ export default function PortfolioSearch({
                     <img
                       src={urlFor(project.mainImage).url()}
                       alt={project.title}
+                      draggable={false}
+                      onDragStart={(e) => e.preventDefault()}
                       className="
                         max-h-full
                         max-w-full
@@ -139,6 +141,8 @@ export default function PortfolioSearch({
                         transition-transform
                         duration-500
                         group-hover:scale-105
+                        select-none
+                        pointer-events-none
                       "
                     />
 

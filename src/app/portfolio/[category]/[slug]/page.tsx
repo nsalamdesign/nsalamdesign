@@ -74,6 +74,7 @@ export default async function ProjectPage({
           <img
             src={urlFor(value).url()}
             alt="case study image"
+            draggable={false}
             className="w-full rounded-2xl border border-white/10"
           />
         </div>
@@ -90,6 +91,7 @@ export default async function ProjectPage({
             <img
               src={urlFor(project.mainImage).url()}
               alt={project.title}
+              draggable={false}
               className="w-full max-h-[500px] object-contain rounded-3xl mx-auto"
             />
           </div>
@@ -179,6 +181,7 @@ export default async function ProjectPage({
                   <img
                     src={urlFor(image).url()}
                     alt={`${project.title}-${index}`}
+                    draggable={false}
                     className="max-h-[280px] w-auto object-contain rounded-xl"
                   />
                 </div>
