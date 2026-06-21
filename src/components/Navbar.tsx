@@ -43,7 +43,7 @@ export default function Navbar() {
               N.SALAM
             </span>
 
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#4A8DFF]-lg font-semibold tracking/45">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#4A8DFF]/45">
               Own Your Presence
             </span>
 
