@@ -3,14 +3,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const pathname = usePathname();
+
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-xl border-b border-white/5">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-[#4A8DFF]/10">
 
       <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+
+        {/* LOGO */}
 
         <Link
           href="/"
@@ -19,8 +32,8 @@ export default function Navbar() {
           <Image
             src="/logo.jpeg"
             alt="N.SALAM"
-            width={48}
-            height={48}
+            width={54}
+            height={54}
             className="rounded-full object-cover"
           />
 
@@ -30,51 +43,45 @@ export default function Navbar() {
               N.SALAM
             </span>
 
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#D9B44A]">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-white/45">
               Own Your Presence
             </span>
 
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.2em] text-white/60">
+        {/* DESKTOP */}
 
-          <Link
-            href="/"
-            className="hover:text-[#4A8DFF] transition duration-300"
-          >
-            Home
-          </Link>
+        <nav className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.2em]">
 
-          <Link
-            href="/portfolio"
-            className="hover:text-[#4A8DFF] transition duration-300"
-          >
-            Portfolio
-          </Link>
+          {links.map((link) => {
+            const active =
+              pathname === link.href ||
+              (link.href !== "/" &&
+                pathname.startsWith(link.href));
 
-          <Link
-            href="/pricing"
-            className="hover:text-[#4A8DFF] transition duration-300"
-          >
-            Pricing
-          </Link>
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative transition duration-300 ${
+                  active
+                    ? "text-[#4A8DFF]"
+                    : "text-white/60 hover:text-[#4A8DFF]"
+                }`}
+              >
+                {link.label}
 
-          <Link
-            href="/blog"
-            className="hover:text-[#4A8DFF] transition duration-300"
-          >
-            Blog
-          </Link>
-
-          <Link
-            href="/contact"
-            className="hover:text-[#4A8DFF] transition duration-300"
-          >
-            Contact
-          </Link>
+                {active && (
+                  <span className="absolute left-0 -bottom-2 w-full h-[2px] bg-[#4A8DFF] rounded-full" />
+                )}
+              </Link>
+            );
+          })}
 
         </nav>
+
+        {/* MOBILE BUTTON */}
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -87,50 +94,34 @@ export default function Navbar() {
 
       </div>
 
+      {/* MOBILE MENU */}
+
       {menuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-8 flex flex-col gap-7 text-white uppercase tracking-[0.2em] text-sm">
+        <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-8 flex flex-col gap-7 text-sm uppercase tracking-[0.2em]">
 
-          <Link
-            href="/"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-[#4A8DFF]"
-          >
-            Home
-          </Link>
+          {links.map((link) => {
+            const active =
+              pathname === link.href ||
+              (link.href !== "/" &&
+                pathname.startsWith(link.href));
 
-          <Link
-            href="/portfolio"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-[#4A8DFF]"
-          >
-            Portfolio
-          </Link>
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={
+                  active
+                    ? "text-[#4A8DFF]"
+                    : "text-white/70"
+                }
+              >
+                {link.label}
+              </Link>
+            );
+          })}
 
-          <Link
-            href="/pricing"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-[#4A8DFF]"
-          >
-            Pricing
-          </Link>
-
-          <Link
-            href="/blog"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-[#4A8DFF]"
-          >
-            Blog
-          </Link>
-
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-[#4A8DFF]"
-          >
-            Contact
-          </Link>
-
-          <div className="pt-4 border-t border-white/10 text-[#D9B44A] text-xs tracking-[0.3em] uppercase">
+          <div className="pt-5 border-t border-white/10 text-white/40 text-xs tracking-[0.3em] uppercase">
             Own Your Presence
           </div>
 
