@@ -8,68 +8,74 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-xl border-b border-white/5">
 
-        {/* LEFT SIDE */}
+      <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="flex items-center gap-4"
         >
           <Image
             src="/logo.jpeg"
-            alt="n.salam design logo"
-            width={42}
-            height={42}
+            alt="N.SALAM"
+            width={48}
+            height={48}
             className="rounded-full object-cover"
           />
 
-          <span className="text-white text-lg tracking-wide font-medium">
-            n.salam design
-          </span>
+          <div className="flex flex-col">
+
+            <span className="text-white text-lg font-semibold tracking-[0.15em]">
+              N.SALAM
+            </span>
+
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#D9B44A]">
+              Own Your Presence
+            </span>
+
+          </div>
         </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.15em] text-white/70">
+        <nav className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.2em] text-white/60">
 
           <Link
             href="/"
-            className="hover:text-[#D4AF37] transition"
+            className="hover:text-[#4A8DFF] transition duration-300"
           >
             Home
           </Link>
 
           <Link
             href="/portfolio"
-            className="hover:text-[#D4AF37] transition"
+            className="hover:text-[#4A8DFF] transition duration-300"
           >
             Portfolio
           </Link>
 
           <Link
             href="/pricing"
-            className="hover:text-[#D4AF37] transition"
+            className="hover:text-[#4A8DFF] transition duration-300"
           >
             Pricing
           </Link>
 
           <Link
             href="/blog"
-            className="hover:text-[#D4AF37] transition"
+            className="hover:text-[#4A8DFF] transition duration-300"
           >
             Blog
           </Link>
 
           <Link
             href="/contact"
-            className="hover:text-[#D4AF37] transition"
+            className="hover:text-[#4A8DFF] transition duration-300"
           >
             Contact
           </Link>
 
         </nav>
 
-        {/* MOBILE BUTTON */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1"
@@ -81,13 +87,13 @@ export default function Navbar() {
 
       </div>
 
-      {/* MOBILE MENU */}
       {menuOpen && (
-        <div className="md:hidden bg-black border-t border-white/10 px-6 py-8 flex flex-col gap-6 text-white uppercase tracking-[0.15em] text-sm">
+        <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-8 flex flex-col gap-7 text-white uppercase tracking-[0.2em] text-sm">
 
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
+            className="hover:text-[#4A8DFF]"
           >
             Home
           </Link>
@@ -95,6 +101,7 @@ export default function Navbar() {
           <Link
             href="/portfolio"
             onClick={() => setMenuOpen(false)}
+            className="hover:text-[#4A8DFF]"
           >
             Portfolio
           </Link>
@@ -102,6 +109,7 @@ export default function Navbar() {
           <Link
             href="/pricing"
             onClick={() => setMenuOpen(false)}
+            className="hover:text-[#4A8DFF]"
           >
             Pricing
           </Link>
@@ -109,6 +117,7 @@ export default function Navbar() {
           <Link
             href="/blog"
             onClick={() => setMenuOpen(false)}
+            className="hover:text-[#4A8DFF]"
           >
             Blog
           </Link>
@@ -116,9 +125,14 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
+            className="hover:text-[#4A8DFF]"
           >
             Contact
           </Link>
+
+          <div className="pt-4 border-t border-white/10 text-[#D9B44A] text-xs tracking-[0.3em] uppercase">
+            Own Your Presence
+          </div>
 
         </div>
       )}
