@@ -79,6 +79,47 @@ export default function RootLayout({
 
         {/* GLOBAL BACKGROUND */}
 
+        <div className="fixed inset-0 -z-10 overflow-hidden">
+
+ {/* BLUE GLOW TOP */}
+       <div className="
+         absolute
+         left-1/2
+         top-[-250px]
+         h-[800px]
+         w-[800px]
+         -translate-x-1/2
+         rounded-full
+         bg-[#1E88FF]/8
+         blur-[220px]
+       " />
+
+  {/* SMALL RIGHT GLOW */}
+   <div className="
+         absolute
+         right-[-200px]
+         top-[35%]
+         h-[500px]
+         w-[500px]
+         rounded-full
+         bg-[#1E88FF]/5
+         blur-[180px]
+      " />
+
+  {/* SMALL ACCENT */}
+  <div className="
+         absolute
+         left-[-150px]
+         bottom-[10%]
+         h-[350px]
+         w-[350px]
+         rounded-full
+         bg-[#D9B44A]/4
+         blur-[150px]
+       " />
+
+        </div>
+
         <div className="global-background">
           <div className="bg-glow-top" />
           <div className="bg-glow-right" />
