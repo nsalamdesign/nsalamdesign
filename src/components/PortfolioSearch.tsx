@@ -75,7 +75,7 @@ export default function PortfolioSearch({
             onChange={(e) => setSearch(e.target.value)}
             className="
               w-full
-              bg-white/5
+              bg-[#111111]
               border
               border-white/10
               rounded-2xl
@@ -118,8 +118,8 @@ export default function PortfolioSearch({
                   border-white/10
                   rounded-3xl
                   overflow-hidden
-                  hover:border-[#D4AF37]
-                  hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]
+                  hover:border-[#D9A441]
+                  hover:shadow-[0_0_35px_rgba(217,164,65,0.18)]
                   transition-all
                   duration-300
                   block
