@@ -76,8 +76,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+
+        {/* GLOBAL BACKGROUND */}
+
+        <div className="global-background">
+          <div className="bg-glow-top" />
+          <div className="bg-glow-right" />
+          <div className="bg-glow-bottom" />
+        </div>
+
         <DisableRightClick />
-        
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-S509X0HKSK"
           strategy="afterInteractive"
@@ -86,10 +95,14 @@ export default function RootLayout({
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
-            gtag('config', 'G-S509X0HKSK');
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+
+            gtag("js", new Date());
+
+            gtag("config", "G-S509X0HKSK");
           `}
         </Script>
 
@@ -100,6 +113,7 @@ export default function RootLayout({
         </PageWrapper>
 
         <Footer />
+
       </body>
     </html>
   );
