@@ -10,7 +10,9 @@ import Footer from "@/components/Footer";
 import PageWrapper from "@/components/animations/PageWrapper";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nsalamdesign.vercel.app"),
+  metadataBase: new URL(
+    "https://nsalamdesign.vercel.app"
+  ),
 
   title: {
     default: "N.Salam Design",
@@ -64,7 +66,8 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "LMTRA9Gqy3s77SmxXK4PUIwuzFF3JEBUr1xSS-P-p8c",
+    google:
+      "LMTRA9Gqy3s77SmxXK4PUIwuzFF3JEBUr1xSS-P-p8c",
   },
 };
 
@@ -75,55 +78,58 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black text-white overflow-x-hidden">
+      <body className="overflow-x-hidden bg-black text-white">
 
         {/* GLOBAL BACKGROUND */}
 
         <div className="fixed inset-0 -z-10 overflow-hidden">
 
- {/* BLUE GLOW TOP */}
-       <div className="
-         absolute
-         left-1/2
-         top-[-250px]
-         h-[800px]
-         w-[800px]
-         -translate-x-1/2
-         rounded-full
-         bg-[#1E88FF]/8
-         blur-[220px]
-       " />
+          {/* MAIN BLUE GLOW */}
 
-  {/* SMALL RIGHT GLOW */}
-   <div className="
-         absolute
-         right-[-200px]
-         top-[35%]
-         h-[500px]
-         w-[500px]
-         rounded-full
-         bg-[#1E88FF]/5
-         blur-[180px]
-      " />
+          <div
+            className="
+              absolute
+              left-1/2
+              top-[-250px]
+              h-[900px]
+              w-[900px]
+              -translate-x-1/2
+              rounded-full
+              bg-[#1E88FF]/10
+              blur-[230px]
+            "
+          />
 
-  {/* SMALL ACCENT */}
-  <div className="
-         absolute
-         left-[-150px]
-         bottom-[10%]
-         h-[350px]
-         w-[350px]
-         rounded-full
-         bg-[#D9B44A]/4
-         blur-[150px]
-       " />
+          {/* RIGHT GLOW */}
 
-        </div>
+          <div
+            className="
+              absolute
+              right-[-250px]
+              top-[40%]
+              h-[600px]
+              w-[600px]
+              rounded-full
+              bg-[#1E88FF]/6
+              blur-[220px]
+            "
+          />
 
-        <div className="global-background">
-          <div className="bg-glow-top" />
-          <div className="bg-glow-right" />
-          <div className="bg-glow-bottom" />
+          {/* ACCENT GLOW */}
+
+          <div
+            className="
+              absolute
+              left-[-150px]
+              bottom-[-100px]
+              h-[400px]
+              w-[400px]
+              rounded-full
+              bg-[#F6C13D]/4
+              blur-[170px]
+            "
+          />
+
         </div>
 
         <DisableRightClick />
@@ -133,7 +139,10 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
 
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
           {`
             window.dataLayer = window.dataLayer || [];
 

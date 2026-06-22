@@ -31,7 +31,7 @@ export default async function PortfolioPage() {
   return (
 <PageTransition>
 
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen text-white">
 
       <section className="pt-40 pb-24 px-6 border-b border-white/10">
 

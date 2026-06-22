@@ -30,7 +30,7 @@ export default async function BlogPostPage({
 
   if (!post) {
     return (
-      <main className="min-h-screen bg-black text-white flex items-center justify-center">
+      <main className="min-h-screen text-white flex items-center justify-center">
         <h1 className="text-5xl font-semibold">
           Article Not Found
         </h1>
@@ -41,7 +41,7 @@ export default async function BlogPostPage({
   return (
     <PageTransition>
 
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen text-white">
 
         {post.coverImage && (
           <ScaleIn>

@@ -37,7 +37,7 @@ export default async function ProjectPage({
 
   if (!project) {
     return (
-      <main className="min-h-screen bg-black text-white flex items-center justify-center">
+      <main className="min-h-screen text-white flex items-center justify-center">
         <h1 className="text-5xl font-semibold">Project Not Found</h1>
       </main>
     );
@@ -83,7 +83,7 @@ export default async function ProjectPage({
   };
 
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="text-white min-h-screen">
       {/* MAIN IMAGE */}
       {project.mainImage && (
         <ScaleIn>
