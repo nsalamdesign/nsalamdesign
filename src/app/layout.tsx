@@ -75,7 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-black text-white overflow-x-hidden">
 
         {/* GLOBAL BACKGROUND */}
 
