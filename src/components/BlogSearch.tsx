@@ -119,7 +119,7 @@ export default function BlogSearch({
                 >
 
                   {post.coverImage && (
-                    <div className="h-56 flex items-center justify-center bg-white/5 overflow-hidden">
+                    <div className="h-56 flex items-center justify-center bg-[#070F16] overflow-hidden">
 
                       <img
                         src={post.coverImage}

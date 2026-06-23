@@ -62,7 +62,7 @@ export default async function PortfolioPage() {
               >
 
                 {category.coverImage && (
-                  <div className="h-64 w-full flex items-center justify-center bg-white/5">
+                  <div className="h-64 w-full flex items-center justify-center bg-[#070F16]">
 
                     <img
                       src={urlFor(category.coverImage).url()}

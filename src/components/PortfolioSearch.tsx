@@ -127,7 +127,7 @@ export default function PortfolioSearch({
               >
 
                 {project.mainImage && (
-                  <div className="h-64 w-full flex items-center justify-center bg-white/5 overflow-hidden">
+                  <div className="h-64 w-full flex items-center justify-center bg-[#050505] overflow-hidden">
 
                     <img
                       src={urlFor(project.mainImage).url()}
