@@ -14,6 +14,27 @@ export const metadata: Metadata = {
     "https://nsalamdesign.vercel.app"
   ),
 
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+      },
+      {
+        url: "/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+
+  manifest: "/site.webmanifest",
+
   title: {
     default: "N.Salam Design",
     template: "%s | N.Salam Design",
@@ -85,7 +106,6 @@ export default function RootLayout({
         <div className="fixed inset-0 -z-10 overflow-hidden">
 
           {/* MAIN BLUE GLOW */}
-
           <div
             className="
               absolute
@@ -101,7 +121,6 @@ export default function RootLayout({
           />
 
           {/* RIGHT GLOW */}
-
           <div
             className="
               absolute
@@ -116,7 +135,6 @@ export default function RootLayout({
           />
 
           {/* ACCENT GLOW */}
-
           <div
             className="
               absolute
