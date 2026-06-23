@@ -106,6 +106,7 @@ export default function RootLayout({
         <div className="fixed inset-0 -z-10 overflow-hidden">
 
           {/* MAIN BLUE GLOW */}
+
           <div
             className="
               absolute
@@ -121,6 +122,7 @@ export default function RootLayout({
           />
 
           {/* RIGHT GLOW */}
+
           <div
             className="
               absolute
@@ -135,6 +137,7 @@ export default function RootLayout({
           />
 
           {/* ACCENT GLOW */}
+
           <div
             className="
               absolute
