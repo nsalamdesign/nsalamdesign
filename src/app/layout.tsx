@@ -3,10 +3,8 @@ import Script from "next/script";
 import "./globals.css";
 
 import DisableRightClick from "@/components/DisableRightClick";
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
 import PageWrapper from "@/components/animations/PageWrapper";
 
 export const metadata: Metadata = {
@@ -14,9 +12,16 @@ export const metadata: Metadata = {
     "https://nsalamdesign.vercel.app"
   ),
 
+  title: {
+    default: "N.Salam Design",
+    template: "%s | N.Salam Design",
+  },
+
   icons: {
     icon: [
-      { url: "/favicon.ico" },
+      {
+        url: "/favicon.ico",
+      },
       {
         url: "/favicon-32x32.png",
         sizes: "32x32",
@@ -28,15 +33,18 @@ export const metadata: Metadata = {
         type: "image/png",
       },
     ],
-    apple: "/apple-touch-icon.png",
+
+    shortcut: "/favicon.ico",
+
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+      },
+    ],
   },
 
   manifest: "/site.webmanifest",
-
-  title: {
-    default: "N.Salam Design",
-    template: "%s | N.Salam Design",
-  },
 
   description:
     "Premium logo design and branding studio helping businesses build memorable identities through strategic design.",
